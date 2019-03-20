@@ -89,7 +89,7 @@
 \ProvidesClass{ntuthesis}[2019/03/20 NTU Thesis Template]
 
 \def\mystretch{1.5}		% one-and-a-half spacing
-\LoadClass{report}
+\LoadClass{article}
 
 \DeclareOption{doublespace}{}	% This is default
 \DeclareOption{singlespace}{% If he explicitly wants single spacing
@@ -102,7 +102,7 @@
 \DeclareOption{leftblank}{\typeout{Intentionally Leaving Pages Blank}
 \@leftblanktrue}
 %  Thesis looks much like report
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
 
 % If the user wants single spacing, set baselinestretch=1.
@@ -337,7 +337,7 @@
 by\par
 {\Large  \choosecase{\@author}}
 
-\vskip 7\baselineskip
+\vskip 10\baselineskip
 \par
 \choosecase{Submitted to the} \choosecase{\@department} \\
 \choosecase{in partial fulfillment of the requirements for the}
@@ -345,8 +345,9 @@ by\par
 \choosecase{of} \\
 \choosecase{\@degree}
 \\
-at the \\
-\par\NTU\par
+at the
+\par
+\NTU\par
 \@degreemonth\ \@degreeyear
 \par
 \newpage
