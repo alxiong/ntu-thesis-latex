@@ -1,10 +1,10 @@
 TEX_SOURCES := main.tex
 
 all:
-	pdflatex main
+	xelatex main
 	bibtex main
-	pdflatex main
-	pdflatex main
+	xelatex main
+	xelatex main
 
 pdf:
 	evince main.pdf

@@ -101,7 +101,6 @@
 \newif\if@leftblank \@leftblankfalse
 \DeclareOption{leftblank}{\typeout{Intentionally Leaving Pages Blank}
 \@leftblanktrue}
-%  Thesis looks much like report
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
 
@@ -116,6 +115,7 @@
 \RequirePackage{lgrind}
 \RequirePackage{cmap}
 \RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx}
 \RequirePackage{amsmath}
 \RequirePackage{appendix}
 \RequirePackage{amssymb}
@@ -129,7 +129,12 @@
 \RequirePackage{xcolor}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{hyperref}
-\hypersetup{colorlinks,urlcolor=blue}
+\hypersetup{
+  colorlinks,
+  urlcolor=blue,
+  linkcolor=blue,
+  citecolor=blue
+}
 \RequirePackage{inconsolata}
 \RequirePackage{listings}
 \RequirePackage{xcolor}
@@ -145,7 +150,6 @@
 \RequirePackage{url}
 \RequirePackage{babel}
 \addto{\captionsenglish}{\renewcommand{\bibname}{References}}
-
 \setlength\extrarowheight{5pt}
 %%%%%%%  Set up margins and formatting params %%%
 
