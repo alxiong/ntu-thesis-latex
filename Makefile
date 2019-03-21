@@ -3,6 +3,7 @@ TEX_SOURCES := main.tex
 all:
 	xelatex main
 	bibtex main
+	xelatex main
 
 pdf:
 	evince main.pdf
