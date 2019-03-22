@@ -112,6 +112,13 @@
 \def\choosecase#1{#1}
 
 \RequirePackage[left=3.5cm, right=3cm, top=3cm, bottom=3cm]{geometry}
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\newcommand*\Let[2]{\State #1 $\gets$ #2}
+\algrenewcommand\alglinenumber[1]{
+    {\sf\footnotesize\addfontfeatures{Colour=888888,Numbers=Monospaced}#1}}
+\algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
+\algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
 \RequirePackage{lgrind}
 \RequirePackage{cmap}
 \RequirePackage[T1]{fontenc}

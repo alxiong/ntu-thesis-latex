@@ -3,3 +3,23 @@
 here's another equation
 
 \[ x^n + y^n = z^n \]
+
+and here's an algorithm:
+\begin{algorithm}
+  \caption{Counting mismatches between two packed DNA strings
+    \label{alg:packed-dna-hamming}}
+  \begin{algorithmic}[1]
+    \Require{$x$ and $y$ are packed DNA strings of equal length $n$}
+    \Statex
+    \Function{Distance}{$x, y$}
+      \Let{$z$}{$x \oplus y$} \Comment{$\oplus$: bitwise exclusive-or}
+      \Let{$\delta$}{$0$}
+      \For{$i \gets 1 \textrm{ to } n$}
+        \If{$z_i \neq 0$}
+          \Let{$\delta$}{$\delta + 1$}
+        \EndIf
+      \EndFor
+      \State \Return{$\delta$}
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
