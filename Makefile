@@ -4,6 +4,7 @@ all:
 	xelatex main
 	bibtex main
 	xelatex main
+	xelatex main
 
 pdf:
 	evince main.pdf
@@ -23,4 +24,4 @@ latexmk_clean:
 
 texi2pdf_clean:
 	rm -rf build/
-	rm -f */**.aux *.aux *.blg *.lof *.lot *.log *.bbl *.blg *.toc */**.gz *.gz
+	rm -f */**.aux *.aux *.blg *.lof *.lot *.log *.bbl *.blg *.toc */**.gz *.gz *.out *.xdv
