@@ -124,6 +124,9 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}
 \RequirePackage{amsmath}
+\RequirePackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
 \RequirePackage{appendix}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
@@ -151,6 +154,7 @@
 \RequirePackage{pgf-umlsd}
 \RequirePackage{tabularx}
 \RequirePackage{tcolorbox}
+\RequirePackage{tablefootnote}
 \RequirePackage{lmodern}
 \RequirePackage{float}
 \RequirePackage{svg}
