@@ -339,6 +339,12 @@
   \vskip\baselineskip \def\baselinestretch{1}\@normalsize
   \par\noindent Thesis Supervisor: #1 \\ Title: #2}}
 
+% Added CCDS FYP project code and name
+\def\project#1#2{
+  \gdef\@projectcode{#1}
+  \gdef\@projectname{#2}
+}
+
 % NOTE: no requirement on putting supervisor's name on cover page.
 
 \def\maketitle{\begin{titlepage}
@@ -349,6 +355,8 @@
 \end{figure}
 \large
 \vskip 4\baselineskip
+% This line adds the CCDS FYP project code and name, comment out if not needed
+{\normalfont{\@projectcode\: \@projectname} \par}
 {\def\baselinestretch{1.2}\Large\bf \choosecase{\@title} \par}
 by\par
 {\Large  \choosecase{\@author}}
