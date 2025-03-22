@@ -361,7 +361,7 @@
 \large
 \vskip 4\baselineskip
 % This line adds the CCDS FYP project code and name, comment out if not needed
-{\normalfont{\@projectcode\: \@projectname} \par}
+{\normalfont{\choosecase{\@projectcode}: \@projectname} \par}
 {\def\baselinestretch{1.2}\Large\bf \choosecase{\@title} \par}
 by\par
 {\Large  \choosecase{\@author}}
