@@ -334,10 +334,15 @@
 % to \supervisor
 \newbox\@titlesupervisor 	\newbox\@abstractsupervisor
 
-\def\supervisor#1#2{\setbox\@abstractsupervisor\vbox
-  {\unvbox\@abstractsupervisor
-  \vskip\baselineskip \def\baselinestretch{1}\@normalsize
-  \par\noindent Thesis Supervisor: #1 \\ Title: #2}}
+\def\supervisor#1#2{
+  \setbox\@abstractsupervisor\vbox{
+    \unvbox\@abstractsupervisor
+    \vskip\baselineskip
+    \def\baselinestretch{1}\@normalsize
+    \noindent  #1 \\
+    \hspace{1em} \textit{#2}  % Indent the title
+  }
+}
 
 % Added CCDS FYP project code and name
 \def\project#1#2{
@@ -390,7 +395,9 @@ at the
 %% Changed from \unvbox to \unvcopy for use with multiple copies of abstract
 %% page.
 %% Krishna Sethuraman (1990)
-\def\endabstractpage{\end{abstract}\noindent
+\def\endabstractpage{\end{abstract}
+\vskip 2\baselineskip
+\noindent\choosecase{Supervisor(s):}
 \unvcopy\@abstractsupervisor \newpage}
 
 %% This counter is used to save the page number for the second copy of
