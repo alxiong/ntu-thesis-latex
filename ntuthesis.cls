@@ -116,11 +116,11 @@
 \RequirePackage{algpseudocode}
 \newcommand*\Let[2]{\State #1 $\gets$ #2}
 \algrenewcommand\alglinenumber[1]{
-    {\sf\footnotesize\addfontfeatures{Colour=888888,Numbers=Monospaced}#1}}
+    {\fontspec{Latin Modern Sans}[Colour=888888, Numbers=Monospaced]\footnotesize #1}
+}
 \algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
 \algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
 \RequirePackage{lgrind}
-\RequirePackage{cmap}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}
 \RequirePackage{amsmath}
@@ -134,7 +134,6 @@
 \RequirePackage{dcolumn}
 \RequirePackage[english]{babel}
 \RequirePackage{enumitem}
-\RequirePackage{epstopdf}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
 \RequirePackage[normalem]{ulem}
@@ -157,9 +156,11 @@
 \RequirePackage{tablefootnote}
 \RequirePackage{lmodern}
 \RequirePackage{float}
-\RequirePackage{svg}
+\RequirePackage[notransparent]{svg}
 \RequirePackage{url}
+\RequirePackage{indentfirst}
 \RequirePackage{babel}
+\RequirePackage{multirow}
 \addto{\captionsenglish}{\renewcommand{\bibname}{References}}
 \setlength\extrarowheight{5pt}
 %%%%%%%  Set up margins and formatting params %%%
@@ -382,7 +383,7 @@ at the
 %% page.
 %% Krishna Sethuraman (1990)
 \def\endabstractpage{\end{abstract}\noindent
- \unvcopy\@abstractsupervisor \newpage}
+\unvcopy\@abstractsupervisor \newpage}
 
 %% This counter is used to save the page number for the second copy of
 %% the abstract.
