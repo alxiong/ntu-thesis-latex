@@ -116,11 +116,11 @@
 \RequirePackage{algpseudocode}
 \newcommand*\Let[2]{\State #1 $\gets$ #2}
 \algrenewcommand\alglinenumber[1]{
-    {\sf\footnotesize\addfontfeatures{Colour=888888,Numbers=Monospaced}#1}}
+    {\fontspec{Latin Modern Sans}[Colour=888888, Numbers=Monospaced]\footnotesize #1}
+}
 \algrenewcommand\algorithmicrequire{\textbf{Precondition:}}
 \algrenewcommand\algorithmicensure{\textbf{Postcondition:}}
 \RequirePackage{lgrind}
-\RequirePackage{cmap}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}
 \RequirePackage{amsmath}
@@ -134,7 +134,6 @@
 \RequirePackage{dcolumn}
 \RequirePackage[english]{babel}
 \RequirePackage{enumitem}
-\RequirePackage{epstopdf}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
 \RequirePackage[normalem]{ulem}
@@ -157,9 +156,11 @@
 \RequirePackage{tablefootnote}
 \RequirePackage{lmodern}
 \RequirePackage{float}
-\RequirePackage{svg}
+\RequirePackage[notransparent]{svg}
 \RequirePackage{url}
+\RequirePackage{indentfirst}
 \RequirePackage{babel}
+\RequirePackage{multirow}
 \addto{\captionsenglish}{\renewcommand{\bibname}{References}}
 \setlength\extrarowheight{5pt}
 %%%%%%%  Set up margins and formatting params %%%
@@ -333,10 +334,21 @@
 % to \supervisor
 \newbox\@titlesupervisor 	\newbox\@abstractsupervisor
 
-\def\supervisor#1#2{\setbox\@abstractsupervisor\vbox
-  {\unvbox\@abstractsupervisor
-  \vskip\baselineskip \def\baselinestretch{1}\@normalsize
-  \par\noindent Thesis Supervisor: #1 \\ Title: #2}}
+\def\supervisor#1#2{
+  \setbox\@abstractsupervisor\vbox{
+    \unvbox\@abstractsupervisor
+    \vskip\baselineskip
+    \def\baselinestretch{1}\@normalsize
+    \noindent  #1 \\
+    \hspace{1em} \textit{#2}  % Indent the title
+  }
+}
+
+% Added CCDS FYP project code and name
+\def\project#1#2{
+  \gdef\@projectcode{#1}
+  \gdef\@projectname{#2}
+}
 
 % NOTE: no requirement on putting supervisor's name on cover page.
 
@@ -348,6 +360,8 @@
 \end{figure}
 \large
 \vskip 4\baselineskip
+% This line adds the CCDS FYP project code and name, comment out if not needed
+{\normalfont{\choosecase{\@projectcode}: \@projectname} \par}
 {\def\baselinestretch{1.2}\Large\bf \choosecase{\@title} \par}
 by\par
 {\Large  \choosecase{\@author}}
@@ -381,8 +395,10 @@ at the
 %% Changed from \unvbox to \unvcopy for use with multiple copies of abstract
 %% page.
 %% Krishna Sethuraman (1990)
-\def\endabstractpage{\end{abstract}\noindent
- \unvcopy\@abstractsupervisor \newpage}
+\def\endabstractpage{\end{abstract}
+\vskip 2\baselineskip
+\noindent\choosecase{Supervisor(s):}
+\unvcopy\@abstractsupervisor \newpage}
 
 %% This counter is used to save the page number for the second copy of
 %% the abstract.
