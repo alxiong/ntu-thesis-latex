@@ -2,7 +2,7 @@
 
 Undergraduate thesis template in Latex for NTU Singapore.
 
-Last updated for CCDS FYP guidelines in 2025 March. Fully compatible in Overleaf with XeLaTeX compiler.
+Last updated for College of Computing and Data Science (CCDS) FYP guidelines in 2025 March. Fully compatible in Overleaf with XeLaTeX compiler.
 
 ## Motivation
 
